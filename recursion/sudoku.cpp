@@ -5,7 +5,7 @@ using namespace std;
 
 bool isSafeToPut(int mat[][9] , int i ,int j ,int number,int n)
 {
-    // check for the perticular row and column
+    // check for the row and column
     for(int k = 0; k < n; k++)
     {
         if(mat[i][k] == number || mat[k][j] == number)
