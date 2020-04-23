@@ -1,4 +1,4 @@
-// User vector
+// vector implementation
 
 #include<iostream>
 using namespace std;
