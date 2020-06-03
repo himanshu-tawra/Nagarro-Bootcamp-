@@ -82,10 +82,62 @@ void printLinkedlist(Node* head){
     cout<<endl;
 }
 
+void deletionFront(Node* &head){
+    if(head == NULL){
+        return;
+    }
+
+    Node* temp = head;
+    head = head->next;
+    delete temp;
+}
+
+void deleteEnd(Node* &head){
+    if(head == NULL){
+        return;
+    }
+    else if(head->next == NULL){
+        delete head;
+        head = NULL;
+    }
+    else{
+        Node* temp = head;
+        while(temp->next->next){
+            temp = temp->next;
+        }
+        delete temp->next;
+        temp->next = NULL;
+    }
+
+}
+
+void deleteMid(Node* &head,int pos){
+    if(pos == 0){
+        deletionFront(head);
+        return;
+    }
+    else if(pos >= lengthLinkedlist(head) - 1){
+        deleteEnd(head);
+        return;
+    }
+    else{
+        Node* temp = head;
+        int count = 1;
+        while(count <= pos - 1){
+            temp = temp->next;
+            count++;
+        }
+        Node* n = temp->next;
+        temp->next = n->next;
+        delete n;
+    }
+}
+
 
 int main(){
 
     Node* head = NULL;
+
     insertionEnd(head,6);
     insertionEnd(head,2);
     insertionEnd(head,3);
@@ -96,6 +148,11 @@ int main(){
 
     printLinkedlist(head);
 
+    deletionFront(head);
+    deleteEnd(head);
+    deleteMid(head,2);
+
+    printLinkedlist(head);
 
     return 0;
 }
