@@ -17,7 +17,7 @@ bool isSorted(int *arr,int size){
 
 int main(){
 
-	int arr[] = {1,2,5,6,7,10,14,15};
+	int arr[] = {1,2,5,6,17,10,14,15};
 	int len = sizeof(arr)/sizeof(arr[0]);
 
 	if(isSorted(arr,len)){
