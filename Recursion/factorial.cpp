@@ -1,26 +1,31 @@
+/*
+    Problem : WAP to find the factorial of a given number using recursion.
+*/
+
 #include<iostream>
 using namespace std;
 
-int fact(int num){
+int factorial(int number){
     // base case
-    
-    if(num == 1 || num == 0){
-        return num;
+
+    if(number == 1){
+        return 1;
     }
-
-
-    //recursive case
-    return num*fact(num-1);
+    // recursive case
+    return number*factorial(number-1);
 
 }
 
+
 int main(){
 
-    int num;
-    cin>>num;
+    int number;
+    cin>>number;
 
+    int fact = factorial(number);
+    cout<<"Factorial of "<<number <<" : "<<fact<<endl;
 
-    cout<<fact(num)<<endl;
 
     return 0;
+
 }

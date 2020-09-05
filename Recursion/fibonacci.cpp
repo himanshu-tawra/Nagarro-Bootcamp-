@@ -1,25 +1,28 @@
 #include<iostream>
 using namespace std;
 
-int fibo(int num){
-	if(num == 0 || num == 1){
-		return num;
-	}
+int fibonacci(int number){
 
-	int smallProblem = fibo(num-2);
-	int bigProblem = fibo(num-1)+smallProblem;
-	return bigProblem;
+    // base case
+    if(number == 0 || number == 1){
+        return number;
+    }
 
+    // recursive case
 
+    return fibonacci(number - 1)+fibonacci(number - 2);
 }
 
 
 int main(){
 
-	int num;
-	cin>>num;
+    int number;
+    cin>>number;
 
-	cout<<fibo(num)<<endl;
+    int fibo = fibonacci(number);
 
-	return 0;
+    cout<<number<<"th fibonacci number : "<<fibo<<endl;
+
+
+    return 0;
 }

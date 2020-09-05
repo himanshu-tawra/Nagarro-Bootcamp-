@@ -1,22 +1,23 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
 void printNumber(int number){
-	if(number == 0){
-		return;
-	}
-	printNumber(number - 1);
-	cout<<number<<" ";
+    // base case
+    if(number == 0){
+        return;
+    }
+    printNumber(number - 1);
+    cout<<number<<endl;
 }
 
 
 int main(){
 
-	int number;
-	cin>>number;
+    int number;
+    cin>>number;
 
-	printNumber(number);
+    printNumber(number);
 
 
-	return 0;
+    return 0;
 }
